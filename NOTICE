@@ -1,0 +1,5 @@
+Original Rockchip, Aicsemi and Android Open Source Project copyrights
+and licenses apply to the imported files in overlays/.
+See the main project docs/provenance.md for their source inventory.
+New BoxRemoteSetup and project-specific additions: Apache-2.0.
+This LICENSE does not replace other per-file licenses.

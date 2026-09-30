@@ -1,0 +1,22 @@
+// AIC SDIO legacy HAL used by the AIDL Wi-Fi service on RK3528.
+cc_library_static {
+    name: "libwifi-hal-aic-sdio",
+    vendor: true,
+    srcs: [
+        "wifi_hal.cpp", "rtt.cpp", "common.cpp", "cpp_bindings.cpp",
+        "gscan.cpp", "link_layer_stats.cpp", "wifi_logger.cpp", "wifi_offload.cpp",
+    ],
+    cflags: [
+        "-Wall", "-Werror", "-Wno-format", "-Wno-reorder",
+        "-Wno-unused-function", "-Wno-unused-parameter",
+        "-Wno-unused-private-field", "-Wno-unused-variable",
+        "-include unistd.h",
+    ],
+    include_dirs: [
+        "external/libnl/include",
+        "hardware/libhardware_legacy/include/hardware_legacy",
+        "external/wpa_supplicant_8/src/drivers",
+    ],
+    header_libs: ["libutils_headers", "liblog_headers", "libhardware_legacy_headers"],
+    shared_libs: ["libnl", "libutils", "liblog"],
+}

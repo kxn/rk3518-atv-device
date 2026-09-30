@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><string name="box_remote_setup_required">Pair your remote to continue. Hold its pairing buttons until the light keeps flashing. Setup will continue after the remote connects.</string><string name="box_remote_setup_connecting">Paired. Connecting your remote… Setup will continue when the remote is ready.</string></resources>

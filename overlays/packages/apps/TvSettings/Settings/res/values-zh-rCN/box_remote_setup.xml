@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><string name="box_remote_setup_required">请先配对遥控器才能继续。按住遥控器的配对组合键，直到指示灯持续闪烁；连接成功后自动继续。</string><string name="box_remote_setup_connecting">已配对，正在连接遥控器… 方向键可用后将自动继续。</string></resources>

@@ -1,0 +1,6 @@
+<resources>
+    <!-- This SystemUI calls WallpaperManager during startup. -->
+    <bool name="config_enableWallpaperService">true</bool>
+    <!-- ATV disables KeyguardService; unsecured box users must not show keyguard. -->
+    <bool name="config_disableLockscreenByDefault">true</bool>
+</resources>

@@ -1,0 +1,24 @@
+// Mali-450 userspace blobs for the primary and compatibility Android runtimes.
+// AOSP 14 requires ELF prebuilts to be declared as modules, not PRODUCT_COPY_FILES.
+cc_prebuilt_library {
+    name: "libGLES_mali",
+    vendor: true,
+    compile_multilib: "both",
+    arch: {
+        arm: { srcs: ["lib/arm/libGLES_mali.so"] },
+        arm64: { srcs: ["lib/arm64/libGLES_mali.so"] },
+    },
+    shared_libs: [
+        "libutils",
+        "libcutils",
+        "libhardware",
+        "liblog",
+        "libdrm",
+        "libc++",
+        "libc",
+        "libm",
+        "libdl",
+    ],
+    check_elf_files: false,
+    relative_install_path: "egl",
+}

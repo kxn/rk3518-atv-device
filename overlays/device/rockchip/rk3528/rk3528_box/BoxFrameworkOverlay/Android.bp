@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "Rk3528BoxFrameworkOverlay",
+    vendor: true,
+    certificate: "platform",
+    sdk_version: "current",
+}

@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rockchip.remotesetup" android:sharedUserId="android.uid.system">
+<uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation"/>
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+<uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"/>
+<uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+<application android:label="遥控器配对" android:theme="@android:style/Theme.Material.NoActionBar" android:directBootAware="true" android:allowBackup="false">
+<activity android:name=".PairActivity" android:exported="true" android:excludeFromRecents="true" android:permission="android.permission.WRITE_SECURE_SETTINGS"/>
+<receiver android:name=".PairReceiver" android:exported="true" android:permission="android.permission.BLUETOOTH_PRIVILEGED">
+<intent-filter android:priority="2000"><action android:name="android.bluetooth.device.action.PAIRING_REQUEST"/></intent-filter>
+</receiver>
+<service android:name=".RemoteService" android:exported="false"/>
+<receiver android:name=".RemoteBootReceiver" android:exported="true">
+<intent-filter><action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/><action android:name="android.intent.action.BOOT_COMPLETED"/><action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/></intent-filter>
+</receiver>
+</application></manifest>

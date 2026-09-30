@@ -1,0 +1,20 @@
+# RK3518 appliance has no Android USB device controller. Do not create
+# FunctionFS/configfs endpoints: adbd listens only on TCP.
+on init
+    setprop sys.usb.configfs 1
+    setprop vendor.sys.usb.adb.disabled 1
+
+on post-fs-data
+    setprop persist.internet_adb_enable 1
+    setprop persist.sys.adb_enable 1
+    setprop persist.adb.tcp.port 5555
+    setprop service.adb.tcp.port 5555
+    start adbd
+
+# UsbDeviceManager may stop adbd when it cannot configure a gadget.
+# Keep the explicitly enabled network listener available.
+on property:init.svc.adbd=stopped && property:persist.internet_adb_enable=1
+    start adbd
+
+on property:sys.boot_completed=1
+    start adbd

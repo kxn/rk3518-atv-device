@@ -1,0 +1,10 @@
+# Keep UART available for errors and shell without per-packet debug output.
+on early-init
+    write /sys/module/printk/parameters/ignore_loglevel N
+    write /proc/sys/kernel/printk "4 4 1 7"
+
+on property:vendor.all.modules.ready=1
+    write /sys/module/aic8800_fdrv/parameters/aicwf_dbg_level 1
+
+on post-fs-data
+    setprop persist.vendor.bluetooth.remote_autoconfirm 1
