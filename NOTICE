@@ -1,5 +1,5 @@
-Original Rockchip, Aicsemi and Android Open Source Project copyrights
-and licenses apply to the imported files in overlays/.
-See the main project docs/provenance.md for their source inventory.
 New BoxRemoteSetup and project-specific additions: Apache-2.0.
-This LICENSE does not replace other per-file licenses.
+Minimal build glue and board configuration retain their Rockchip/AOSP notices.
+Third-party library sources are obtained directly from pinned upstreams by the
+main rk3518-atv project; they are not imported in this repository's current tree.
+Per-file copyrights and SPDX headers take precedence over the root LICENSE.

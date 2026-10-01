@@ -1,5 +1,0 @@
-// HIDL package root for Rockchip vendor interfaces (rockchip.hardware.*)
-hidl_package_root {
-    name: "rockchip.hardware",
-    path: "vendor/rockchip/hardware/interfaces",
-}
